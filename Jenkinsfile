@@ -1,22 +1,16 @@
 node {
         stage('Build') {
-            steps {
-                echo 'Building..'
-                sh 'javac myfile.java'
-                sh 'java myfile'
-            }
+            echo 'Building..'
+            sh 'javac myfile.java'
+            sh 'java myfile'
         }
     
         stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
+            echo 'Testing..'
         }
     
         stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
+            echo 'Deploying....'
         }
 
 }
