@@ -1,27 +1,23 @@
 pipeline {
-        agent any
-        stages {
-                
-                stage('Build') {
-                        steps {
-                           echo 'Building..'
-                           sh 'javac myfile.java'
-                           sh 'java myfile'     
-                        }
-                }
+    agent any
 
-                stage('Test') {
-                        steps {
-                          echo 'Testing..'
-                        }
-                }
-
-                stage('Deploy') {
-                        steps {
-                          echo 'Deploying....'
-                        }           
-                }
-                
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+                sh 'javac myfile.java'
+                sh 'java myfile'   
+            }
         }
-
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
+    }
 }
