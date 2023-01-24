@@ -5,8 +5,6 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                javac myfile.java
-                java myfile
             }
         }
         stage('Test') {
