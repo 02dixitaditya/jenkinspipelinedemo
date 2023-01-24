@@ -8,8 +8,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                javac myfile.java
-                java myfile
+                sh javac myfile.java
+                sh java myfile
             }
         }
         stage('Test') {
