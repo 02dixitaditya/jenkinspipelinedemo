@@ -1,7 +1,4 @@
-pipeline {
-    agent any
-
-    stages {
+node {
         stage('Build') {
             steps {
                 echo 'Building..'
@@ -9,15 +6,17 @@ pipeline {
                 sh 'java myfile'
             }
         }
+    
         stage('Test') {
             steps {
                 echo 'Testing..'
             }
         }
+    
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
             }
         }
-    }
+
 }
