@@ -1,16 +1,27 @@
-node {
-        stage('Build') {
-            echo 'Building..'
-            sh 'javac myfile.java'
-            sh 'java myfile'
-        }
-    
-        stage('Test') {
-            echo 'Testing..'
-        }
-    
-        stage('Deploy') {
-            echo 'Deploying....'
+pipeline {
+        agent any
+        stages {
+
+                stage('Build') {
+                        steps {
+                           echo 'Building..'
+                           sh 'javac myfile.java'
+                           sh 'java myfile'     
+                        }
+                }
+
+                stage('Test') {
+                        steps {
+                          echo 'Testing..'
+                        }
+                }
+
+                stage('Deploy') {
+                        steps {
+                          echo 'Deploying....'
+                        }           
+                }
+                
         }
 
 }
